@@ -7,10 +7,14 @@ Este projeto implementa um sistema de reconhecimento facial utilizando bibliotec
 A seguir, são apresentadas imagens que ilustram a capacidade de identificação do sistema:
 
 ![Identificação da pessoa Rani](Rani_1.png)
-*Figura 1: Exemplo de identificação facial para 'Rani'.*
+
 
 ![Identificação da pessoa Mantovani](Mantovani_1.png)
-*Figura 2: Exemplo de identificação facial para 'Mantovani'.*
+
+
+![Identificação da pessoa Mantovani](Mantovani_2.png)
+
+
 
 ---
 
