@@ -1,8 +1,16 @@
-# Sistema de Reconhecimento Facial para Autenticação e Monitoramento
+# Sistema de Reconhecimento Facial para Dispositivos Comuns: Prova de Conceito
 
-Este projeto implementa um sistema de reconhecimento facial utilizando bibliotecas de visão computacional e inteligência artificial. Desenvolvido como parte de um Trabalho de Conclusão de Curso (TCC), seu objetivo principal é atuar como uma prova de conceito para a viabilidade do reconhecimento facial em tempo real utilizando hardware acessível e tecnologias presentes em dispositivos comuns. O sistema demonstra o potencial da biometria facial como uma solução de baixo custo para identificação e autenticação, sem a necessidade de equipamentos especializados.
+Este projeto implementa um sistema de reconhecimento facial utilizando bibliotecas de visão computacional e inteligência artificial. Desenvolvido como parte de um Trabalho de Conclusão de Curso (TCC), seu objetivo principal é atuar como uma **prova de conceito para a viabilidade do reconhecimento facial em tempo real utilizando hardware acessível e tecnologias presentes em dispositivos comuns**. O sistema demonstra o potencial da biometria facial como uma solução de **baixo custo** para identificação e autenticação, sem a necessidade de equipamentos especializados.
 
+### Exemplos de Identificação
 
+A seguir, são apresentadas imagens que ilustram a capacidade de identificação do sistema:
+
+![Identificação da pessoa Rani](Rani_1.jpg)
+*Figura 1: Exemplo de identificação facial para 'Rani'.*
+
+![Identificação da pessoa Mantovani](Mantovani_1.jpg)
+*Figura 2: Exemplo de identificação facial para 'Mantovani'.*
 
 ---
 
@@ -36,7 +44,6 @@ Siga estes passos para configurar e instalar o ambiente necessário.
     git clone [Projet-Final-Sistema-de-Reconhecimento-Facial]
     cd [Projet-Final-Sistema-de-Reconhecimento-Facial]
     ```
-
 
 ### 2.2. Configuração do Ambiente Virtual (`venv`)
 
@@ -83,24 +90,37 @@ As dependências do projeto estão listadas no arquivo `requirements.txt`. A ins
 
 ---
 
-## 3. Execução do Sistema
+## 3. Estrutura do Projeto e Preparação de Dados
+
+O projeto é organizado para facilitar a compreensão de suas funcionalidades e o tratamento dos dados.
+
+* **`funcoes_principais.py`**: Este arquivo centraliza a implementação das diversas funções críticas do sistema, como detecção de faces, cálculo de embeddings faciais e comparação de faces. Cada função é cuidadosamente documentada para explicar seu propósito e uso.
+
+* **`serializacao_banco_dados_LFW.py`**: Para otimizar o desempenho do sistema, especialmente no contexto de hardware acessível, este script é responsável por **serializar o banco de dados LFW (Labeled Faces in the Wild)**. Ele processa as imagens do LFW e as converte em um formato otimizado (geralmente um arquivo `.pkl` ou `.json` contendo embeddings faciais pré-calculados). Isso permite o carregamento rápido e eficiente dos dados durante a execução do sistema, evitando o reprocessamento de imagens a cada inicialização e reduzindo a carga computacional.
+
+---
+
+## 4. Execução do Sistema
 
 Após a instalação bem-sucedida, você pode executar o sistema:
 
 1.  **Ative o `venv`** (se ainda não estiver ativo).
-2.  **Execute o script main.py** do projeto 
+2.  **Execute o script main.py** do projeto:
     ```bash
     python main.py
     ```
 
 ---
 
-## 4. Solução de Problemas Comuns (Troubleshooting)
+## 5. Solução de Problemas Comuns (Troubleshooting)
 
 Esta seção aborda os erros mais frequentes e suas soluções.
 
-### 4.1. Erros de Instalação
+### 5.1. Erros de Instalação
 
+* **`Fatal error in launcher: Unable to create process using "..."` ou `O sistema não pode encontrar o arquivo especificado.`**
+    * **Causa:** Geralmente ocorre após renomear a pasta do projeto, pois o `venv` mantém referências a caminhos antigos.
+    * **Solução:** **Exclua completamente a pasta `venv`** dentro do seu projeto e, em seguida, **recrie-o e reinstale todas as dependências** seguindo os passos da Seção 2.2 e 2.3.
 
 * **`ERROR: Could not find a version that satisfies the requirement dlib==19.22.99`**
     * **Causa:** Isso significa que o `pip` não encontrou essa versão específica do `dlib` pré-compilada no PyPI ou que o comando de instalação do `.whl` não foi usado ou executado corretamente.
@@ -116,7 +136,7 @@ Esta seção aborda os erros mais frequentes e suas soluções.
         ```
         *(Se `cmake` for um problema: `pip install cmake==3.17.2`)*
 
-### 4.2. Problemas com a Webcam
+### 5.2. Problemas com a Webcam
 
 * **Sistema não conecta à câmera ou tela preta:**
     * **Permissões do Windows:** Vá em `Configurações > Privacidade e Segurança > Câmera` e **ative o acesso à câmera** e a opção "Permitir que os aplicativos da área de trabalho acessem sua câmera".
