@@ -1,4 +1,4 @@
-# Sistema de Reconhecimento Facial para Dispositivos Comuns: Prova de Conceito
+# Sistema de Reconhecimento Facial 
 
 Este projeto implementa um sistema de reconhecimento facial utilizando bibliotecas de visão computacional e inteligência artificial. Desenvolvido como parte de um Trabalho de Conclusão de Curso (TCC), seu objetivo principal é atuar como uma **prova de conceito para a viabilidade do reconhecimento facial em tempo real utilizando hardware acessível e tecnologias presentes em dispositivos comuns**. O sistema demonstra o potencial da biometria facial como uma solução de **baixo custo** para identificação e autenticação, sem a necessidade de equipamentos especializados.
 
